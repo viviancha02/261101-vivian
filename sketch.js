@@ -2,13 +2,13 @@ let ball;
 
 
 function setup() {
-  createCanvas(400, 400); 
+  createCanvas(windowWidth, windowHeight); 
   ball = new Walker();
 }
 
 
 function draw() {
-  background(220, 5);
+  background(0);
   ball.update();
   ball.display();
 }
@@ -25,13 +25,14 @@ class Walker {
   
   update() {
     //update position
-  	this.x = this.x + random(-5, 5);
-  	this.y = this.y + random(-5, 5);
+  	this.x = this.x + random(-1, 1);
+  	this.y = this.y + random(-1, 1);
   }
   
   display() {
     //display walker
-	ellipse(this.x, this.y, this.w);
+	fill(255, 105, 180);
+  rect(this.x, this.y, this.w);
 
   }
 }
